@@ -10,7 +10,7 @@ const userId1 = Symbol("123");
 const userId2 = Symbol("123");
 // console.log(userId1 === userId2);
 const bigNumber = 1234567890n;
-console.log(bigNumber);
+// console.log(bigNumber);
 
 
 // Non-primitive(Reference) data types
@@ -24,3 +24,23 @@ const myFunc = function () {
     console.log("Hello world!");
 }
 myFunc();
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let myName = "Naren";
+let anotherName = myName;
+anotherName = "Narendra";
+console.log(anotherName);
+console.log(myName);
+
+let userOne = {
+    name: 'user 1',
+    email: 'user1@gmail.com'
+}
+let userTwo = userOne;
+userTwo.email = "user2@gmail.com";
+console.log(userTwo);
+console.log(userOne);
