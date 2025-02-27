@@ -21,7 +21,7 @@ const obj1 = { 1: "a", 2: "b" };
 const obj2 = { 3: "a", 4: "b" };
 // const obj3 = {obj1, obj2};
 // const obj3 = Object.assign({}, obj1, obj2);
-const obj3 = {...obj1, ...obj2};
+const obj3 = { ...obj1, ...obj2 };
 // console.log(obj3);
 
 const users = [
@@ -43,4 +43,13 @@ const users = [
 // console.log(Object.values(partUser));
 // console.log(Object.entries(partUser));
 
-console.log(partUser.hasOwnProperty("name"));
+// console.log(partUser.hasOwnProperty("name"));
+
+
+const course = {
+    name: "JS practice",
+    cost: 999,
+    courseInstructor: "Naren"
+}
+const { courseInstructor: instructor } = course;
+console.log(instructor)
