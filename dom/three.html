@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: #212121; color: blanchedalmond">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    // Add language
+    const addLanguage = (langName) => {
+      const createLiElement = document.createElement("li");
+      createLiElement.innerHTML = langName;
+      document.querySelector(".language").appendChild(createLiElement);
+    };
+    const addOptiLanguage = (langName) => {
+      const createLiElement = document.createElement("li");
+      createLiElement.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(createLiElement);
+    };
+    addLanguage("Typescript");
+    addOptiLanguage("React");
+
+    // Edit language
+    const editLanguage = document.querySelector("li:nth-child(2)");
+    // first approach
+    // editLanguage.innerHTML = "Mojo";
+    // second approach
+    const newLi = document.createElement("li");
+    newLi.textContent = "Jojo";
+    editLanguage.replaceWith(newLi);
+    // third approach
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>Mojito</li>";
+
+    // Remove Language
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
