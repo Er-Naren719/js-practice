@@ -15,7 +15,8 @@
     <div class="bg-black">
         <h1 id="title" class="heading">Learning DOM</h1>
         <p>Lorem ipsum dolor sit amet.</p>
-        <ul>
+        <ul class="parent">
+            <!-- Adding this comment to understand childNodes -->
             <li class="list-item">1</li>
             <li class="list-item">2</li>
             <li class="list-item">3</li>
@@ -23,4 +24,21 @@
         </ul>
     </div>
 </body>
+<script>
+    const parent = document.querySelector('.parent');
+    // console.log(parent);
+    // console.log(parent.children[1].innerHTML);
+    // for(let i=0; i<parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    parent.children[1].style.color = "red";
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+    const firstChild = document.querySelector(".list-item");
+    // console.log(firstChild);
+    // console.log(firstChild.parentElement);
+    // console.log(firstChild.nextElementSibling);
+    // console.log(firstChild.nextSibling);
+    console.log(parent.childNodes);
+</script>
 </html>
