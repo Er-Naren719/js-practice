@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <style>
+    body {
+      background-color: #414141;
+      color: aliceblue;
+    }
+    li {
+      padding: 50px;
+      border: 1px solid;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <ul id="parent">
+      <li id="one">One</li>
+      <li id="two">Two</li>
+      <li id="three">Three</li>
+      <li id="four">Four</li>
+      <li id="five">Five</li>
+      <li id="six"><a href="https://www.google.com/">Google</a></li>
+    </ul>
+  </body>
+  <script>
+    // document.getElementById('four').onclick = function() {
+    //     alert("Four clicked");
+    // }
+
+    // attachEvent() => used for Internet Explorer
+    // jQuery => on()
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("parent").addEventListener(
+    //   "click",
+    //   (e) => {
+    //     console.log("parent clicked");
+    //   },
+    // //   true // capturing the event
+    // );
+    // document.getElementById("four").addEventListener(
+    //   "click",
+    //   (e) => {
+    //     console.log("four clicked");
+    //   },
+    //   false
+    // );
+    // document.getElementById("six").addEventListener(
+    //   "click",
+    //   (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    //   },
+    //   false
+    // );
+
+    document.getElementById("parent").addEventListener("click", (e) => {
+      console.log(e.target.tagName);
+      console.log(e.target.id);
+      let removeElement = e.target;
+      removeElement.remove();
+      // removeElement.parentNode.removeChild(removeElement);
+    });
+  </script>
+</html>
