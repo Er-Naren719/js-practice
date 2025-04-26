@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+</head>
+
+<body>
+  <h2>Two</h2>
+  <button id="btn">Clear Timeout</button>
+</body>
+<script>
+  // const printObject = () => {
+  //   console.log("object");
+  // };
+  const updateHeading = () => {
+    document.querySelector('h2').innerText = "Updated Heading";
+  };
+  const changeHeading = setTimeout(updateHeading, 2000);
+  // clearTimeout(changeHeading);
+  document.getElementById('btn').addEventListener('click', () => {
+    clearTimeout(changeHeading);
+    console.log("Timeout cleared");
+  });
+</script>
+
+</html>
