@@ -162,3 +162,37 @@ const newGame = () => {
   });
 };
 ```
+
+## Project 5
+
+```javascript
+```
+
+## Project 6
+
+```javascript
+const genarateRandomColor = () => {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalObj;
+const startChangingColor = () => {
+  if (!intervalObj) {
+    intervalObj = setInterval(changeBGColor, 1000);
+  }
+  function changeBGColor() {
+    document.body.style.backgroundColor = genarateRandomColor();
+  }
+};
+const stopChangingColor = () => {
+  clearInterval(intervalObj);
+  intervalObj = null;
+};
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+```
