@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Request</title>
+</head>
+
+<body>
+  <button id='btn'>Get Details</button>
+</body>
+<script>
+  let userData;
+  const requestUrl = 'https://jsonplaceholder.typicode.com/users';
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', requestUrl);
+  xhr.onreadystatechange = function () {
+    if (xhr.status === 200) {
+      userData = JSON.parse(xhr.responseText);
+      console.log(xhr.readyState);
+    }
+  };
+  xhr.send();
+  document.getElementById("btn").addEventListener('click', () => {
+    document.body.innerHTML += `<div>
+      <h2>First user details</h2>
+      <p>Name: ${userData[0].name}</p>
+      <p>Email: ${userData[0].email}</p>
+      <p>Phone: ${userData[0].phone}</p>
+      <p>Website: ${userData[0].website}</p>
+    </div>`;
+  });
+</script>
+
+</html>
